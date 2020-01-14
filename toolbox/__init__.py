@@ -6,8 +6,10 @@ from pathlib import Path
 from time import perf_counter as timer
 from toolbox.utterance import Utterance
 import numpy as np
+import librosa
 import traceback
 import sys
+from datetime import datetime
 
 
 # Use this directory structure for your datasets, or modify it to fit your needs
@@ -226,6 +228,11 @@ class Toolbox:
         # Plot it
         self.ui.draw_embed(embed, name, "generated")
         self.ui.draw_umap_projections(self.utterances)
+
+        fpath = "output_files/" + self.ui.selected_utterance.speaker_name + "_" + datetime.now().strftime("%s") + ".wav"
+        librosa.output.write_wav(fpath, wav.astype(np.float32), 
+                                    Synthesizer.sample_rate)
+        print("\nSaved output as %s\n\n" % fpath)
         
     def init_encoder(self):
         model_fpath = self.ui.current_encoder_fpath

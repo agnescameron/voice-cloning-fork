@@ -1,4 +1,5 @@
 *.pyc
+*.DS_Store
 *.aux
 *.log
 *.out
@@ -15,6 +16,7 @@
 *.toc
 *.wav
 *.sh
+datasets_root
 encoder/saved_models/*
 synthesizer/saved_models/*
 vocoder/saved_models/*
