@@ -16,6 +16,9 @@ Run `pip install -r requirements.txt` to install the necessary packages. Additio
 ### Pretrained models
 Download the latest [here](https://github.com/CorentinJ/Real-Time-Voice-Cloning/wiki/Pretrained-models). These follow the same file structure as the repository: so, copy `saved_models` in the folder `encoder` into the folder `encoder` in the repo, etc.
 
+### Output
+I added an 'output' line to the vocoder. This will dump files in `output_files`, named with the unix timestamp and the parent directory.
+
 ### Toolbox
 To run the toolbox on a mac, do
 
